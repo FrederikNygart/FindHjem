@@ -10,6 +10,7 @@ const gender = {
  * @param {Adress}      adress          - the adress of the Center  
  * @param {Array}       tags            - a list of tags that describes the Center
  * @param {Object}      openingHours    - the opening hours of the Center
+ * @param {Object}      closingHours    - the closing hours of the Center
  * @param {string}      name            - the Center's name
  * @param {string}      description     - a description of the center
  * @param {number}      gender          - the accepted genders 
@@ -21,26 +22,30 @@ const gender = {
 class Center {
 
     constructor(
-        adress, 
-        tags = [], 
-        openingHours, 
-        name, 
-        description, 
-        gender, 
-        ageLimit, 
+        adress,
+        tags = [],
+        openingHours,
+        closingHours,
+        name,
+        description,
+        gender,
+        ageLimit,
         email = null,
-        website = null, 
+        website = null,
         phoneNumber
-        ){
-            this.adress = adress;
-            this.tags = tags;
-            this.openingHours = openingHours;
-            this.name = name;
-            this.description = description;
-            this.gender = gender;
-            this.ageLimit = ageLimit;
-            this.email = email;
-            this.phoneNumber = phoneNumber;
+    ) {
+        this.adress = adress;
+        this.tags = tags;
+        this.openingHours = openingHours;
+        this.closingHours = closingHours;
+        this.name = name;
+        this.description = description;
+        this.gender = gender;
+        this.ageLimit = ageLimit;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
     }
 
 }
+
+export { Center, gender };

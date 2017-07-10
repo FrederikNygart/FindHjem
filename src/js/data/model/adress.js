@@ -5,7 +5,7 @@
  * @param {string} postalCode - the postal code
  */
 
-class Adress {
+export default class Adress {
     constructor(street, city, postalCode){
         this.street = street;
         this.city = city;
