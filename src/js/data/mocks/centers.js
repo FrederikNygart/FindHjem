@@ -9,6 +9,38 @@ const ALL = gender.ALL,
 
 
 let centers = [
+    //Gadeteamet
+    new Center(
+        new Adress('Boulevarden 19', 'Aalborg', '9000'),
+        ['Mangler bolig'],
+        new WorkingHours(
+            '09:00', 
+            '09:00', 
+            '09:00', 
+            '09:00', 
+            '09:00', 
+            null, 
+            null
+        ),
+        new WorkingHours(
+            '16:00',
+            '16:00',
+            '16:00',
+            '16:00',
+            '16:00',
+            null,
+            null
+        ),
+        null,
+        null,
+        'Gadeteamet',
+        'Her kan du modtage hjælp til kontakt til offentlige myndigheder er er tilknyttet en gadesygeplejerske, som har mulighed for at tilse dig eller hjælpe dig på sygehuset',
+        ALL,
+        new AgeLimit(null, null),
+        null,
+        null,
+        '98317755'
+    ),
     //Cafe VæXt
     new Center(
         new Adress(
@@ -341,3 +373,4 @@ let centers = [
         '32219095'
     ),
 ]
+

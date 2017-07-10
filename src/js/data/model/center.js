@@ -56,4 +56,4 @@ class Center {
 
 }
 
-export { Center, gender};
+export { Center, gender };
