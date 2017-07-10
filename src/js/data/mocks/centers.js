@@ -34,12 +34,17 @@ let centers = [
         null,
         null,
         'Gadeteamet',
-        'Her kan du modtage hjælp til kontakt til offentlige myndigheder er er tilknyttet en gadesygeplejerske, som har mulighed for at tilse dig eller hjælpe dig på sygehuset',
+        `
+        Her kan du modtage hjælp til kontakt til offentlige 
+        myndigheder er er tilknyttet en gadesygeplejerske, 
+        som har mulighed for at tilse dig eller hjælpe dig på sygehuset
+        `,
+        false,
         ALL,
         new AgeLimit(null, null),
         null,
         null,
-        '98317755'
+        ['98317755']
     ),
     //Cafe VæXt
     new Center(
@@ -111,7 +116,7 @@ let centers = [
         ),
         'cafevaext@aalborg.dk',
         null,
-        '98102618'
+        ['98102618']
     ),
     //Det Grønlandske Hus
     new Center(
@@ -164,7 +169,7 @@ let centers = [
         ),
         'aalborg@dgh-aalborg.dk',
         'www.dgh-aalborg.dk',
-        '98146800'
+        ['98146800']
     ),
     //Den Sociale Skadestue
     new Center(
@@ -217,7 +222,7 @@ let centers = [
         ),
         null,
         'www.densocialeskadestue.dk',
-        '98123292'
+        ['98123292']
     ),
     //Kvisten
     new Center(
@@ -267,7 +272,7 @@ let centers = [
         ),
         'aalborg@kvistene.dk',
         'http://www.kvistene.dk/',
-        '50542550'
+        ['50542550']
     ),
     //Legal Aid - Retshjælp i Danmark
     new Center(
@@ -318,7 +323,7 @@ let centers = [
         ),
         'raadgivning@legal-aid.dk',
         'www.legal.aid.dk',
-        '32219095'
+        ['32219095']
     ),
     //Misbrugsafsnittet
     new Center(
@@ -370,7 +375,7 @@ let centers = [
         ),
         'raadgivning@legal-aid.dk',
         'www.legal.aid.dk',
-        '32219095'
+        ['32219095']
     ),
 ]
 
