@@ -8,7 +8,7 @@ const ALL = gender.ALL,
     FEMALE = gender.FEMALE;
 
 
-let centers = [
+export const centers = [
     //Gadeteamet
     new Center(
         new Adress('Boulevarden 19', 'Aalborg', '9000'),
@@ -36,7 +36,7 @@ let centers = [
         'Gadeteamet',
         `
         Her kan du modtage hjælp til kontakt til offentlige 
-        myndigheder er er tilknyttet en gadesygeplejerske, 
+        myndigheder der er tilknyttet en gadesygeplejerske, 
         som har mulighed for at tilse dig eller hjælpe dig på sygehuset
         `,
         false,
