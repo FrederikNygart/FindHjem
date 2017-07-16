@@ -2,21 +2,23 @@ import {StyleSheet} from 'react-native';
 
 export const appStyle = StyleSheet.create({
   resultText: {
-    backgroundColor: '#000',
     color: '#FFF',
     flex: 1,
-  },
-  resultImage: {
-    height: 150,
+    textAlign: 'center'
   },
   flashyBackground: {
-    flex:2,
-    backgroundColor: '#FC46AA'
+    flex:1,
+    backgroundColor: '#FC46AA',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    flexWrap: 'wrap',
   },
   container: {
     flex: 1,
-    backgroundColor: '#27408b',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#FFF',
   },
+  navBar: {
+    height: 30,
+  }
 });
