@@ -27,7 +27,6 @@ class HomeScreen extends Component {
           title='Get Centers'
           onPress={
             () => { 
-              console.log("pressed button");
               this.props.goTo('CenterList'); 
             }
           }

@@ -16,7 +16,6 @@ export default function nav(
   let nextState;
   switch (action.type) {
     case types.GO_TO:
-      console.log('action goto', action.route);
       nextState = AppNavigator.router.getStateForAction(
         NavigationActions
           .navigate({ routeName: action.route }),
@@ -27,7 +26,6 @@ export default function nav(
       nextState = AppNavigator.router.getStateForAction(action, state);
       break;
   }
-  console.log('state', state);
   console.log('nextstate', nextState);
   // Simply return the original `state` if `nextState` is null or undefined.
   return nextState || state;
