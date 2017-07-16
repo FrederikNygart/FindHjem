@@ -1,6 +1,5 @@
 import * as CenterActions from './center_actions';
+import { goTo } from './navigation_actions';
 
-export const ActionCreators = Object.assign({}, 
-    CenterActions,
-);
+export { goTo };
 
