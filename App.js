@@ -5,9 +5,12 @@ import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { createLogger } from 'redux-logger';
 import { StyleSheet, Text, View } from 'react-native';
 import reducer from './src/js/reducers';
-import AppContainer from './src/js/containers/app';
 
-const loggerMiddleware = createLogger({ predicate: (getState, action) => __DEV__ });
+import AppWithNavigationState from './src/js/navigation/app_navigator';
+
+const loggerMiddleware = createLogger(
+  { predicate: (getState, action) => __DEV__ }
+);
 
 function configureStore(initialState) {
   const enhancer = compose(
@@ -25,7 +28,7 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <AppContainer />
+        <AppWithNavigationState />
       </Provider>
     );
   }
