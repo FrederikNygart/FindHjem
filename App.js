@@ -24,6 +24,10 @@ function configureStore(initialState) {
 
 const store = configureStore({});
 
+store.subscribe(() => {
+  console.log('Store changed', store.getState());
+});
+
 export default class App extends Component {
   render() {
     return (
