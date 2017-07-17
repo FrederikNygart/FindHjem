@@ -13,6 +13,7 @@ class CenterListScreen extends Component {
   };
   
   render() {
+    console.log('centerss', this.props.centers);
     return (
       <View style={appStyle.container}>
         <InfoBox
@@ -23,8 +24,14 @@ class CenterListScreen extends Component {
   }
 }
 
+function mapStateToProps(state){
+  return{
+    centers: state.centers,
+  }
+}
+
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({goTo: goTo}, dispatch);
 }
 
-export default connect(() => { return {} }, mapDispatchToProps)(CenterListScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(CenterListScreen);
