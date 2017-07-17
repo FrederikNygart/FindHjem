@@ -9,7 +9,7 @@ const initialNavState = {
   ]
 }
 
-export default function nav(
+export default function navigationReducer(
   state = initialNavState,
   action
 ) {
@@ -26,7 +26,6 @@ export default function nav(
       nextState = AppNavigator.router.getStateForAction(action, state);
       break;
   }
-  console.log('nextstate', nextState);
   // Simply return the original `state` if `nextState` is null or undefined.
   return nextState || state;
 }
