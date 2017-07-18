@@ -36,8 +36,18 @@ class HomeScreen extends Component {
   }
 
   static navigationOptions = {
-    title: 'Find Hjem!'
+    title: 'Find Hjem'
   };
+
+  goToNextPage(){
+    if(this.state.age === '' || this.state.gender === 0){
+      alert('Udfyld venligst alder og køn for at finde hjælp')
+    } else {
+      this.props.goTo('CenterList');
+      this.props.setAge(this.state.age);
+      this.props.setGender(this.state.gender);
+    }
+  }
 
   render() {
     return (
@@ -71,7 +81,7 @@ class HomeScreen extends Component {
             <View style={appStyle.containerBox}>
               <RadioForm
                 radio_props={radioProps}
-                initial={1}
+                initial={0}
                 animation={true}
                 onPress={(value) => {
                   this.setState({ gender: value })
@@ -84,12 +94,10 @@ class HomeScreen extends Component {
         </View>
         <View style={appStyle.containerCentered}>
           <Button
-            title='Find hjælp!'
+            title='Find hjælp'
             onPress={
               () => {
-                this.props.goTo('CenterList');
-                this.props.setAge(this.state.age);
-                this.props.setGender(this.state.gender);
+                this.goToNextPage();
               }
             }
           />
