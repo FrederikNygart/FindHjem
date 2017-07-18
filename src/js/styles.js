@@ -38,7 +38,7 @@ export const appStyle = StyleSheet.create({
   },
   textInput: {
     height: 40,
-    width: 40,
+    width: 80,
     borderColor: 'grey',
     textAlign: 'center',
   }
