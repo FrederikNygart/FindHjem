@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { appStyle } from '../styles';
+import { appStyle } from '../lib/styles';
 import {
     View,
     Text

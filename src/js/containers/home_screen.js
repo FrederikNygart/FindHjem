@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { goTo, setAge, setGender } from '../actions';
-import { appStyle } from '../styles';
+import { appStyle } from '../lib/styles';
 
 import {
   Text,
@@ -43,7 +43,7 @@ class HomeScreen extends Component {
     if(this.state.age === '' || this.state.gender === 0){
       alert('Udfyld venligst alder og køn for at finde hjælp')
     } else {
-      this.props.goTo('CenterList');
+      this.props.goTo('ChoiceList');
       this.props.setAge(this.state.age);
       this.props.setGender(this.state.gender);
     }
@@ -94,6 +94,7 @@ class HomeScreen extends Component {
         </View>
         <View style={appStyle.containerCentered}>
           <Button
+            style={appStyle.button}
             title='Find hjælp'
             onPress={
               () => {
