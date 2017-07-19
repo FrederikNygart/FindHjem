@@ -25,33 +25,33 @@ const gender = {
 class Center {
 
     constructor(
-        adress, 
-        tags = [], 
-        centerOpening, 
+        adress,
+        tags = [],
+        centerOpening,
         centerClosing,
         phoneOpening,
         phoneClosing,
-        name, 
+        name,
         description,
         intoxication,
-        gender, 
-        ageLimit, 
+        gender,
+        ageLimit,
         email = null,
-        website = null, 
+        website = null,
         phoneNumbers
-        ){
-            this.adress = adress;
-            this.tags = tags;
-            this.centerOpening = centerOpening;
-            this.centerClosing = centerClosing;
-            this.name = name;
-            this.description = description;
-            this.intoxication = intoxication;
-            this.gender = gender;
-            this.ageLimit = ageLimit;
-            this.email = email;
-            this.website = website;
-            this.phoneNumbers = phoneNumbers;
+    ) {
+        this.adress = adress;
+        this.tags = tags;
+        this.centerOpening = centerOpening;
+        this.centerClosing = centerClosing;
+        this.name = name;
+        this.description = description;
+        this.intoxication = intoxication;
+        this.gender = gender;
+        this.ageLimit = ageLimit;
+        this.email = email;
+        this.website = website;
+        this.phoneNumbers = phoneNumbers;
     }
 
 }
