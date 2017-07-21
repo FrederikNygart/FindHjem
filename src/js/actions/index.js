@@ -6,6 +6,16 @@ import {
     setAge, 
     setGender 
 } from './user_actions';
+import {
+    getCatagories,
+    getSubCatagories,
+} from './catagories_actions.js'
 
-export { goTo, setAge, setGender };
+export { 
+    goTo, 
+    setAge, 
+    setGender,
+    getCatagories,
+    getSubCatagories,
+ };
 
