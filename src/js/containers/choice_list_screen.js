@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { goTo } from '../actions';
+import { goTo, getSubCatagories } from '../actions';
 import { appStyle } from '../lib/styles';
-import { FIRST_LEVEL } from '../data/mocks/center_classification';
 import ChoiceListElement from '../components/choice_list_element';
 
 import {
@@ -25,7 +24,7 @@ class ChoiceListScreen extends Component {
   };
 
   onPressCatagory(catagory) {
-    alert('hello! ' + catagory);
+    this.props.getSubCatagories(catagory);
   }
 
   renderListElements() {
@@ -35,11 +34,13 @@ class ChoiceListScreen extends Component {
           return (
             <TouchableHighlight
               key={i}
-              onPress={this.onPressCatagory(key)}
+              onPress={() => this.onPressCatagory(key)}
+              activeOpacity={0.99}
+              underlayColor={'steelblue'}
             >
               <View>
                 <ChoiceListElement
-                  elementText={value}
+                  elementText={value.description}
                   key={i}
                 />
               </View>
@@ -61,14 +62,15 @@ class ChoiceListScreen extends Component {
 
 function mapStateToProps(state) {
   return {
-    catagories: FIRST_LEVEL,
+    catagories: state.catagories.current,
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      goTo: goTo
+      goTo: goTo,
+      getSubCatagories: getSubCatagories,
     },
     dispatch
   );
