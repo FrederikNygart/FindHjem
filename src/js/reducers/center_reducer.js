@@ -1,5 +1,5 @@
 import centers from '../data/mocks/centers';
-import * as types from '../actions/types';
+import * as types from '../lib/types';
 
 export default function centerReducer(state = [], action) {
     switch (action.type) {

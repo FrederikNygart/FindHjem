@@ -1,4 +1,4 @@
-import * as types from './types';
+import * as types from '../lib/types';
 
 export const setAge = (age) => {
     console.log('Alder', age);

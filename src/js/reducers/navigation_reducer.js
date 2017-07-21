@@ -1,6 +1,6 @@
 import { NavigationActions } from 'react-navigation';
 import { AppNavigator } from '../navigation/app_navigator';
-import * as types from '../actions/types'
+import * as types from '../lib/types';
 
 const initialNavState = {
   index: 0,
