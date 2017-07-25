@@ -2,14 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { appStyle } from '../lib/styles';
-
-import { 
-  goTo, 
-  setAge, 
-  setGender, 
-  getCatagories 
-} from '../actions';
-
 import {
   Text,
   TextInput,
@@ -17,7 +9,15 @@ import {
   View,
   Button
 } from 'react-native';
-
+import {
+  goTo,
+  setAge,
+  setGender,
+  filterCentersByAge,
+  filterCentersByGender,
+  getCatagories,
+  getCenters,
+} from '../actions';
 import RadioForm, {
   RadioButton,
   RadioButtonInput,
@@ -41,16 +41,21 @@ class HomeScreen extends Component {
     }
   }
 
+  componentWillMount() {
+  }
+
   static navigationOptions = {
     title: 'Find Hjem'
   };
 
-  goToNextPage(){
-    if(this.state.age === '' || this.state.gender === 0){
+  goToNextPage() {
+    if (this.state.age === '' || this.state.gender === 0) {
       alert('Udfyld venligst alder og køn for at finde hjælp')
     } else {
       this.props.setAge(this.state.age);
       this.props.setGender(this.state.gender);
+      this.props.filterCentersByAge(this.state.age);
+      this.props.filterCentersByGender(this.state.gender);
       this.props.getCatagories();
       this.props.goTo('ChoiceList');
     }
@@ -117,7 +122,6 @@ class HomeScreen extends Component {
 
 function mapStateToProps(state) {
   return {
-
   }
 }
 
@@ -125,9 +129,10 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
       goTo,
-      setAge,
-      setGender,
+      filterCentersByAge,
+      filterCentersByGender,
       getCatagories,
+      getCenters,
     },
     dispatch
   );

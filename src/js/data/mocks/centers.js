@@ -3,23 +3,28 @@ import Adress from '../model/adress';
 import AgeLimit from '../model/age_limit';
 import WorkingHours from '../model/working_hours';
 
+import { CATAGORIES } from '../mocks/center_classification';
+
 const ALL = gender.ALL,
     MALE = gender.MALE,
     FEMALE = gender.FEMALE;
 
 
-export const centers = [
+export const CENTERS = {
     //Gadeteamet
-    new Center(
+    gadeteamet: new Center(
         new Adress('Boulevarden 19', 'Aalborg', '9000'),
-        ['Mangler bolig'],
+        {
+            ACCOMODATION: CATAGORIES.ACCOMODATION.description,
+            GUIDANCE: CATAGORIES.ACCOMODATION.subCatagories.GUIDANCE.description
+        },
         new WorkingHours(
-            '09:00', 
-            '09:00', 
-            '09:00', 
-            '09:00', 
-            '09:00', 
-            null, 
+            '09:00',
+            '09:00',
+            '09:00',
+            '09:00',
+            '09:00',
+            null,
             null
         ),
         new WorkingHours(
@@ -41,29 +46,30 @@ export const centers = [
         `,
         false,
         ALL,
-        new AgeLimit(null, null),
+        new AgeLimit(0, 999),
         null,
         null,
 
         ['98317755']
     ),
     //Cafe VæXt
-    new Center(
+    cafe_vaext: new Center(
         new Adress(
             'Poul Paghs Gade 6 a, 1. sal',
             'Aalborg',
             '9000',
         ),
-        [
-            'Værested',
-        ],
+        {
+            SOCIALIZING: CATAGORIES.SOCIALIZING.description,
+            EX_ADDICT: CATAGORIES.SOCIALIZING.subCatagories.EX_ADDICT.description,
+        },
         new WorkingHours(
-            '11:00', 
-            '11:00', 
-            '11:00', 
-            '11:00', 
-            '11:00', 
-            null, 
+            '11:00',
+            '11:00',
+            '11:00',
+            '11:00',
+            '11:00',
+            null,
             null
         ),
         new WorkingHours(
@@ -76,21 +82,21 @@ export const centers = [
             null
         ),
         new WorkingHours(
-            '10:00', 
-            '10:00', 
-            '10:00', 
-            '10:00', 
-            '10:00', 
-            null, 
+            '10:00',
+            '10:00',
+            '10:00',
+            '10:00',
+            '10:00',
+            null,
             null
         ),
         new WorkingHours(
-            '15:00', 
-            '15:00', 
-            '15:00', 
-            '17:00', 
-            '15:00', 
-            null, 
+            '15:00',
+            '15:00',
+            '15:00',
+            '17:00',
+            '15:00',
+            null,
             null
         ),
         'Cafe VæXt',
@@ -112,32 +118,31 @@ export const centers = [
         false,
         ALL,
         new AgeLimit(
-            null,
-            null,
+            0,
+            999
         ),
         'cafevaext@aalborg.dk',
         null,
         ['98102618']
     ),
     //Det Grønlandske Hus
-    new Center(
+    det_groenlandske_hus: new Center(
         new Adress(
             'Ågade 9',
             'Aalborg',
             '9000',
         ),
-        [
-            'Værested',
-            'Grønland',
-            'Grønlænder'
-        ],
+        {
+            SOCIALIZING: CATAGORIES.SOCIALIZING.description,
+            GREENLANDIC: CATAGORIES.SOCIALIZING.subCatagories.GREENLANDIC.description
+        },
         new WorkingHours(
-            '09:00', 
-            '12:00', 
-            '09:00', 
-            '09:00', 
-            '09:00', 
-            null, 
+            '09:00',
+            '12:00',
+            '09:00',
+            '09:00',
+            '09:00',
+            null,
             null
         ),
         new WorkingHours(
@@ -165,30 +170,30 @@ export const centers = [
         false,
         ALL,
         new AgeLimit(
-            null,
-            null,
+            0, 999
         ),
         'aalborg@dgh-aalborg.dk',
         'www.dgh-aalborg.dk',
         ['98146800']
     ),
     //Den Sociale Skadestue
-    new Center(
+    den_sociale_skadestue: new Center(
         new Adress(
             'Vor Frue Plads 6',
             'Aalborg',
             '9000',
         ),
-        [
-            'Rådgivning',
-        ],
+        {
+            ADVICE: CATAGORIES.ADVICE.description,
+            NIGHT_TIME: CATAGORIES.ADVICE.subCatagories.NIGHT_TIME.description,
+        },
         new WorkingHours(
-            '18:00', 
-            '18:00', 
-            '18:00', 
-            '18:00', 
-            '18:00', 
-            null, 
+            '18:00',
+            '18:00',
+            '18:00',
+            '18:00',
+            '18:00',
+            null,
             null
         ),
         new WorkingHours(
@@ -218,25 +223,23 @@ export const centers = [
         false,
         ALL,
         new AgeLimit(
-            null,
-            null,
+            0, 999
         ),
         null,
         'www.densocialeskadestue.dk',
         ['98123292']
     ),
     //Kvisten
-    new Center(
+    kvisten: new Center(
         new Adress(
             'Mølholmsvej 2',
             'Aalborg',
             '9000',
         ),
-        [
-            'Rådgivning',
-            'Seksuelle overgreb',
-            'Telefonisk rådgivning'
-        ],
+        {
+            ADVICE: CATAGORIES.ADVICE.description,
+            SEXUAL_ASSAULT: CATAGORIES.ADVICE.subCatagories.SEXUAL_ASSAULT.description
+        },
         null,
         null,
         new WorkingHours(
@@ -269,22 +272,23 @@ export const centers = [
         ALL,
         new AgeLimit(
             18,
-            null,
+            999
         ),
         'aalborg@kvistene.dk',
         'http://www.kvistene.dk/',
         ['50542550']
     ),
     //Legal Aid - Retshjælp i Danmark
-    new Center(
+    legal_aid: new Center(
         new Adress(
             'Kattesundet 24, 1. sal',
             'Aalborg',
             '9000',
         ),
-        [
-            'Juridisk bistand',
-        ],
+        {
+            ADVICE: CATAGORIES.ADVICE.description,
+            LEGAL: CATAGORIES.ADVICE.subCatagories.LEGAL.description
+        },
         new WorkingHours(
             '11:00',
             '11:00',
@@ -319,23 +323,23 @@ export const centers = [
         true,
         ALL,
         new AgeLimit(
-            null,
-            null,
+            0, 999
         ),
         'raadgivning@legal-aid.dk',
         'www.legal.aid.dk',
         ['32219095']
     ),
     //Misbrugsafsnittet
-    new Center(
+    misbrugsafsnittet: new Center(
         new Adress(
             'Badehusvej 1, 1. sal',
             'Aalborg',
             '9000',
         ),
-        [
-            'Misbrugsproblemer',
-        ],
+        {
+            ADDICTION: CATAGORIES.ADDICTION.description,
+            TREATMENT: CATAGORIES.ADDICTION.subCatagories.TREATMENT.description
+        },
         new WorkingHours(
             '09:00',
             null,
@@ -372,12 +376,12 @@ export const centers = [
         ALL,
         new AgeLimit(
             18,
-            null,
+            999,
         ),
         'raadgivning@legal-aid.dk',
         'www.legal.aid.dk',
         ['32219095']
     ),
-]
+}
 
 

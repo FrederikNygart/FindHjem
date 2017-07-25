@@ -8,7 +8,7 @@ const gender = {
 /**
  * Defines a Center for rehabilitation 
  * @param {Adress} adress - the adress of the Center  
- * @param {Array} tags - a list of tags that describes the Center
+ * @param {Array} catagories - a list of tags that describes the Center
  * @param {WorkingHours} centerOpening - the opening hours of the Center
  * @param {WorkingHours} centerClosing - the closing hours of the Center
  * @param {WorkingHours} phoneOpening - the Center's phone opening hours
@@ -26,7 +26,7 @@ class Center {
 
     constructor(
         adress,
-        tags = [],
+        catagories = [],
         centerOpening,
         centerClosing,
         phoneOpening,
@@ -41,7 +41,7 @@ class Center {
         phoneNumbers
     ) {
         this.adress = adress;
-        this.tags = tags;
+        this.catagories = catagories;
         this.centerOpening = centerOpening;
         this.centerClosing = centerClosing;
         this.name = name;
