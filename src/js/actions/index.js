@@ -1,21 +1,29 @@
-import * as CenterActions from './center_actions';
-import { 
-    goTo 
-} from './navigation_actions';
-import { 
-    setAge, 
-    setGender 
-} from './user_actions';
 import {
+    getCenters,
+    filterCentersByAge,
+    filterCentersByGender,
     getCatagories,
-    getSubCatagories,
-} from './catagories_actions.js'
+    filterCentersByCatagory,
+} from './center_actions';
 
-export { 
-    goTo, 
-    setAge, 
+import {
+    goTo
+} from './navigation_actions';
+
+import {
+    setAge,
+    setGender
+} from './user_actions';
+
+
+export {
+    getCenters,
+    filterCentersByAge,
+    filterCentersByGender,
+    goTo,
+    setAge,
     setGender,
     getCatagories,
-    getSubCatagories,
- };
+    filterCentersByCatagory,
+};
 
