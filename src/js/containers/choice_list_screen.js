@@ -25,15 +25,13 @@ class ChoiceListScreen extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.centers !== nextProps.centers) {
-      console.log('are we dealing with new centers?', this.props.centers.length)
-      console.log('are we dealing with new centers?', nextProps.centers.length)
       if (nextProps.catagoriesLevel > 1 && nextProps.centers.length > 1) {
         //go to center_list_screen
         alert('Go to center list screen');
       }
       if (nextProps.centers.length === 1) {
         //Go to center screen for the remaining center
-        alert('Go to center screen');
+        this.props.goTo('Center', { centerName: nextProps.centers[0].name });
       }
       if (nextProps.catagoriesLevel < 2 && nextProps.centers.length > 1) {
         this.props.getCatagories();
@@ -42,10 +40,11 @@ class ChoiceListScreen extends Component {
   }
 
   static navigationOptions = {
-    title: 'Vælg tilstand'
+    title: 'Hvad søger du?'
   };
 
   render() {
+
     return (
       <View style={appStyle.container}>
         {this.renderListElements()}
@@ -53,14 +52,10 @@ class ChoiceListScreen extends Component {
     );
   }
 
-  onPressCatagory(catagory) {
-    this.props.filterCentersByCatagory(catagory);
-  }
-
   renderListElements() {
     return (
       <ScrollView>
-        {Object.entries(this.props.catagories).map(([key, val], i) => {
+        {Object.entries(this.props.catagories || {}).map(([key, val], i) => {
           return (
             <TouchableHighlight
               key={i}
@@ -80,23 +75,27 @@ class ChoiceListScreen extends Component {
       </ScrollView>
     )
   }
+
+  onPressCatagory(catagory) {
+    this.props.filterCentersByCatagory(catagory);
+  }
 }
 
 function mapStateToProps(state) {
-  console.log('centers what are you doing!!: ', state.centers.current.length);
   return {
     catagories: state.centers.catagories,
     catagoriesLevel: state.centers.catagoriesLevel,
     centers: state.centers.current,
+    user: state.user,
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      goTo: goTo,
-      getCatagories: getCatagories,
-      filterCentersByCatagory: filterCentersByCatagory,
+      goTo,
+      getCatagories,
+      filterCentersByCatagory,
     },
     dispatch
   );
