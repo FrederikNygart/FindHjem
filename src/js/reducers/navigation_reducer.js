@@ -18,10 +18,18 @@ export default function navigationReducer(
     case types.GO_TO:
       nextState = AppNavigator.router.getStateForAction(
         NavigationActions
-          .navigate({ routeName: action.route }),
+          .navigate({ routeName: action.route, params: action.params }),
         state
       );
       break;
+
+    case types.SET_PARAMS:
+      nextState = AppNavigator.router.getStateForAction(
+        NavigationActions
+          .setParams({ routeName: action.route, params: action.params }),
+        state
+      )
+
     default:
       nextState = AppNavigator.router.getStateForAction(action, state);
       break;

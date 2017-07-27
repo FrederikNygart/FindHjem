@@ -7,7 +7,8 @@ import {
 } from './center_actions';
 
 import {
-    goTo
+    goTo,
+    setParams
 } from './navigation_actions';
 
 import {
@@ -21,6 +22,7 @@ export {
     filterCentersByAge,
     filterCentersByGender,
     goTo,
+    setParams,
     setAge,
     setGender,
     getCatagories,
