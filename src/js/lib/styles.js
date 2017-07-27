@@ -2,9 +2,28 @@ import { StyleSheet } from 'react-native';
 
 export const appStyle = StyleSheet.create({
   resultText: {
-    color: '#FFF',
     flex: 1,
-    textAlign: 'center'
+    textAlign: 'left',
+    marginLeft: 10,
+  },
+  centerDescription: {
+    flex: 1,
+    textAlign: 'left',
+    marginLeft: 30,
+    marginRight: 30,
+  },
+  openingHours:{
+    margin: 20,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: 'skyblue',
+    borderRadius: 10,
+  },
+  openingHoursElement: {
+    marginTop: 10,
+    marginBottom: 10,
+    marginLeft: 30,
+    marginRight: 30,
   },
   flashyBackground: {
     flex: 1,
@@ -17,6 +36,13 @@ export const appStyle = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFF',
+  },
+  buttonContainer: {
+    flex: 1,
+    backgroundColor: '#FFF',
+    marginLeft: 30,
+    marginRight: 30,
+    marginTop: 20,
   },
   containerCentered: {
     flex: 1,
