@@ -18,31 +18,19 @@ export const CENTERS = {
             ACCOMODATION: CATAGORIES.ACCOMODATION.description,
             GUIDANCE: CATAGORIES.ACCOMODATION.subCatagories.GUIDANCE.description
         },
-        new WorkingHours(
-            '09:00',
-            '09:00',
-            '09:00',
-            '09:00',
-            '09:00',
+        [
             null,
-            null
-        ),
-        new WorkingHours(
-            '16:00',
-            '16:00',
-            '16:00',
-            '16:00',
-            '16:00',
+            ['09:00', '16:00'],
+            ['09:00', '16:00'],
+            ['09:00', '16:00'],
+            ['09:00', '16:00'],
+            ['09:00', '16:00'],
             null,
-            null
-        ),
-        null,
+        ],
         null,
         'Gadeteamet',
         `
-        Her kan du modtage hjælp til kontakt til offentlige 
-        myndigheder der er tilknyttet en gadesygeplejerske, 
-        som har mulighed for at tilse dig eller hjælpe dig på sygehuset
+Her kan du modtage hjælp til kontakt til offentlige myndigheder der er tilknyttet en gadesygeplejerske, som har mulighed for at tilse dig eller hjælpe dig på sygehuset
         `,
         false,
         ALL,
@@ -63,57 +51,34 @@ export const CENTERS = {
             SOCIALIZING: CATAGORIES.SOCIALIZING.description,
             EX_ADDICT: CATAGORIES.SOCIALIZING.subCatagories.EX_ADDICT.description,
         },
-        new WorkingHours(
-            '11:00',
-            '11:00',
-            '11:00',
-            '11:00',
-            '11:00',
+        [
             null,
-            null
-        ),
-        new WorkingHours(
-            '15:30',
-            '17:30',
-            '17:30',
-            '17:30',
-            '15:30',
+            ['11:00', '15:30'],
+            ['11:00', '17:30'],
+            ['11:00', '17:30'],
+            ['11:00', '17:30'],
+            ['11:00', '15:30'],
             null,
-            null
-        ),
-        new WorkingHours(
-            '10:00',
-            '10:00',
-            '10:00',
-            '10:00',
-            '10:00',
+
+        ],
+        [
             null,
-            null
-        ),
-        new WorkingHours(
-            '15:00',
-            '15:00',
-            '15:00',
-            '17:00',
-            '15:00',
+            ['10:00', '15:00'],
+            ['10:00', '15:00'],
+            ['10:00', '15:00'],
+            ['10:00', '17:00'],
+            ['10:00', '15:00'],
             null,
-            null
-        ),
+        ],
         'Cafe VæXt',
         `
-        Her har du mulighed for at møde andre, 
-        der tidligere har haft et misbrug. 
-        Der er også mulighed for telefonisk vejledning.
+Her har du mulighed for at møde andre, der tidligere har haft et misbrug. Der er også mulighed for telefonisk vejledning.
         
-        Caféen har forskellige tilbud så som: 
-        Musik, foredrag, net café og billard.
+Caféen har forskellige tilbud så som: Musik, foredrag, net café og billard.
             
-        Der er en café, hvor du har mulighed for at købe 
-        lidt mad: Dagens frokost og/eller håndmadder 
-        mandag - torsdag fra kl. 12.00 til kl. 14.00.
+Der er en café, hvor du har mulighed for at købe lidt mad: Dagens frokost og/eller håndmadder mandag - torsdag fra kl. 12.00 til kl. 14.00.
 
-        Du må ikke være påvirket af alkohol, stoffer 
-        eller andre stemningsændrende midler.   
+Du må ikke være påvirket af alkohol, stoffer eller andre stemningsændrende midler.   
         `,
         false,
         ALL,
@@ -136,36 +101,23 @@ export const CENTERS = {
             SOCIALIZING: CATAGORIES.SOCIALIZING.description,
             GREENLANDIC: CATAGORIES.SOCIALIZING.subCatagories.GREENLANDIC.description
         },
-        new WorkingHours(
-            '09:00',
-            '12:00',
-            '09:00',
-            '09:00',
-            '09:00',
+        [
             null,
-            null
-        ),
-        new WorkingHours(
-            '15:30',
-            '15:30',
-            '15:30',
-            '15:30',
-            '15:00',
+            ['09:00', '15:30'],
+            ['12:00', '15:30'],
+            ['09:00', '15:30'],
+            ['09:00', '15:30'],
+            ['09:00', '15:00'],
             null,
-            null
-        ),
-        null,
+        ],
         null,
         'Det Grønlandske Hus',
         `
-        Et grønlandsk samlingssted(Tamassa), med 
-        mulighed for at møde andre grønlændere. 
+Et grønlandsk samlingssted(Tamassa), med mulighed for at møde andre grønlændere. 
 
-        Her har du mulighed for at få rådgivning om sociale, 
-        personlige og praktiske ting. 
+Her har du mulighed for at få rådgivning om sociale, personlige og praktiske ting. 
 
-        Der vil være café-dage, sangkor og 
-        kulturelle arrangementer
+Der vil være café-dage, sangkor og kulturelle arrangementer
         `,
         false,
         ALL,
@@ -187,38 +139,23 @@ export const CENTERS = {
             ADVICE: CATAGORIES.ADVICE.description,
             NIGHT_TIME: CATAGORIES.ADVICE.subCatagories.NIGHT_TIME.description,
         },
-        new WorkingHours(
-            '18:00',
-            '18:00',
-            '18:00',
-            '18:00',
-            '18:00',
+        [
             null,
-            null
-        ),
-        new WorkingHours(
-            '07:00',
-            '07:00',
-            '07:00',
-            '07:00',
-            '07:00',
+            ['18:00', '07:00'],
+            ['18:00', '07:00'],
+            ['18:00', '07:00'],
+            ['18:00', '07:00'],
+            ['18:00', '07:00'],
             null,
-            null
-        ),
-        null,
+        ],
         null,
         'Den Sociale Skadestue',
         `
-        Du har mulighed for at modtage rådgivning 
-        i aften/nat-timerne. 
+Du har mulighed for at modtage rådgivning i aften/nat-timerne. 
  
-        Det kan være f.eks. være omkring ensomhed, 
-        samlivsproblemer, familieproblemer, 
-        problemer på arbejdet/studiet, stress, angst, 
-        selvmordstanker eller misbrugsproblemer. 
+Det kan være f.eks. være omkring ensomhed, samlivsproblemer, familieproblemer, problemer på arbejdet/studiet, stress, angst, selvmordstanker eller misbrugsproblemer. 
         
-        Du kan også henvende dig, hvis du har været 
-        udsat for vold eller en ulykke.
+Du kan også henvende dig, hvis du har været udsat for vold eller en ulykke.
         `,
         false,
         ALL,
@@ -241,32 +178,20 @@ export const CENTERS = {
             SEXUAL_ASSAULT: CATAGORIES.ADVICE.subCatagories.SEXUAL_ASSAULT.description
         },
         null,
-        null,
-        new WorkingHours(
-            null,
-            '17:00',
+        [
             null,
             null,
-            null,
-            null,
-            null
-        ),
-        new WorkingHours(
-            null,
-            '20:00',
+            ['17:00', '20:00'],
             null,
             null,
             null,
             null,
-            null
-        ),
+        ],
         'Kvisten',
         `
-        Hvis du har været udsat for seksuelle overgreb, 
-        kan du henvende dig telefonisk eller på mail.  
+Hvis du har været udsat for seksuelle overgreb, kan du henvende dig telefonisk eller på mail.  
  
-        Du har mulighed for at få terapi 
-        individuelt eller i grupper.
+Du har mulighed for at få terapi individuelt eller i grupper.
         `,
         false,
         ALL,
@@ -289,36 +214,25 @@ export const CENTERS = {
             ADVICE: CATAGORIES.ADVICE.description,
             LEGAL: CATAGORIES.ADVICE.subCatagories.LEGAL.description
         },
-        new WorkingHours(
-            '11:00',
-            '11:00',
-            '11:00',
-            '14:00',
-            '11:00',
+        [
             null,
+            ['11:00', '14:00',],
+            ['11:00', '14:00',],
+            ['11:00', '14:00',],
+            ['14:00', '17:00',],
+            ['11:00', '14:00',],
             null,
-        ),
-        new WorkingHours(
-            '14:00',
-            '14:00',
-            '14:00',
-            '17:00',
-            '14:00',
-            null,
-            null,
-        ),
-        null,
+        ],
         null,
         'Legal Aid - Retshjælp i Danmark',
         `
-        Du kan modtage juridisk hjælp, dette kan foregå 
-        gennem mundtlig juridisk rådgivning samt 
-        skriftlig sagsbehandling. 
+Du kan modtage juridisk hjælp, dette kan foregå gennem mundtlig juridisk rådgivning samt skriftlig sagsbehandling. 
 
-        Du kan f.eks. modtage hjælp til:  
-        - Udforme klage til offentlig myndighed. 
-        - Klage til udlejer 
-        - Protesterer mod opsigelse i et ansættelsesforhold.
+Du kan f.eks. modtage hjælp til:  
+- Udforme klage til offentlig myndighed. 
+- Klage til udlejer 
+- Protesterer mod opsigelse i et 
+  ansættelsesforhold.
         `,
         true,
         ALL,
@@ -340,37 +254,23 @@ export const CENTERS = {
             ADDICTION: CATAGORIES.ADDICTION.description,
             TREATMENT: CATAGORIES.ADDICTION.subCatagories.TREATMENT.description
         },
-        new WorkingHours(
-            '09:00',
+        [
             null,
-            '09:00',
-            '13:00',
+            ['09:00', '12:00',],
             null,
-            null,
-            null,
-        ),
-        new WorkingHours(
-            '12:00',
-            null,
-            '12:00',
-            '16:00',
+            ['09:00', '12:00',],
+            ['13:00', '16:00',],
             null,
             null,
-            null,
-        ),
-        null,
+        ],
         null,
         'Misbrugsafsnittet',
         `
-        Du har mulighed for at henvende dig til en åben 
-        rådgivning med henblik på at komme i behandling.
+Du har mulighed for at henvende dig til en åben rådgivning med henblik på at komme i behandling.
 
-        Her vil du få råd og vejledning og høre om 
-        Misbrugsafsnittets behandlingstilbud.
+Her vil du få råd og vejledning og høre om Misbrugsafsnittets behandlingstilbud.
 
-        Derfra kan du blive tilbudt en 
-        udredningssamtale, hvorfra de kan udarbejde 
-        en plan for behandling.
+Derfra kan du blive tilbudt en udredningssamtale, hvorfra de kan udarbejde en plan for behandling.
         `,
         true,
         ALL,

@@ -9,28 +9,23 @@ const gender = {
  * Defines a Center for rehabilitation 
  * @param {Adress} adress - the adress of the Center  
  * @param {Array} catagories - a list of tags that describes the Center
- * @param {WorkingHours} centerOpening - the opening hours of the Center
- * @param {WorkingHours} centerClosing - the closing hours of the Center
- * @param {WorkingHours} phoneOpening - the Center's phone opening hours
- * @param {WorkingHours} phoneClosing - the Center's phone closing hours
- * @param {string} name - the Center's name
- * @param {string} description - a description of the center
- * @param {boolean} intoxication - the Center allows intoxication persons to be recieved
- * @param {number} gender - the accepted genders 
+ * @param {Array} centerOpening - the openinghours of the Center
+ * @param {Array} phoneOpening - the Center's phone openinghours
+ * @param {String} name - the Center's name
+ * @param {String} description - a description of the center
+ * @param {Boolean} intoxication - the Center allows intoxication persons to be recieved
+ * @param {Number} gender - the accepted genders 
  * @param {AgeLimit} ageLimit - the age limit of the Center
- * @param {string} email - the e-mail 
- * @param {string} website - the website 
+ * @param {String} email - the e-mail 
+ * @param {String} website - the website 
  * @param {Array} phoneNumbers - the Centers phone numbers 
  */
 class Center {
-
     constructor(
         adress,
         catagories = [],
         centerOpening,
-        centerClosing,
         phoneOpening,
-        phoneClosing,
         name,
         description,
         intoxication,
@@ -43,7 +38,7 @@ class Center {
         this.adress = adress;
         this.catagories = catagories;
         this.centerOpening = centerOpening;
-        this.centerClosing = centerClosing;
+        this.phoneOpening = phoneOpening;
         this.name = name;
         this.description = description;
         this.intoxication = intoxication;
