@@ -9,11 +9,13 @@ import {
 import HomeScreen from '../containers/home_screen';
 import ChoiceListScreen from '../containers/choice_list_screen';
 import CenterListScreen from '../containers/center_list_screen';
+import CenterScreen from '../containers/center_screen';
 
 export const AppNavigator = StackNavigator({
   Home: { screen: HomeScreen },
   ChoiceList: { screen: ChoiceListScreen },
   CenterList: { screen: CenterListScreen },
+  Center: {screen: CenterScreen},
 });
 
 const AppWithNavigationState = ({ dispatch, nav }) => (
