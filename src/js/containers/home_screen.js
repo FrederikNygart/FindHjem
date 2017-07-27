@@ -41,12 +41,14 @@ class HomeScreen extends Component {
     }
   }
 
-  componentWillMount() {
-  }
+  static navigationOptions = ({ navigation }) => ({
+    title: 'Find Hjem',
+  })
 
-  static navigationOptions = {
-    title: 'Find Hjem'
-  };
+  viewAllCenters() {
+    this.props.getCenters()
+    this.props.goTo('CenterList')
+  }
 
   goToNextPage() {
     if (this.state.age === '' || this.state.gender === 0) {
@@ -104,10 +106,10 @@ class HomeScreen extends Component {
             </View >
           </View>
         </View>
-        <View style={appStyle.containerCentered}>
+        <View style={appStyle.buttonContainer}>
           <Button
             style={appStyle.button}
-            title='Find hjælp'
+            title='Find tilbud'
             onPress={
               () => {
                 this.goToNextPage();
@@ -129,6 +131,8 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
       goTo,
+      setAge,
+      setGender,
       filterCentersByAge,
       filterCentersByGender,
       getCatagories,
