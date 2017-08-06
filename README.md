@@ -1,9 +1,10 @@
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
-Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
+Below you'll find information about performing common tasks.
 
 ## Table of Contents
 
+* [View App](#view-app)
 * [Get Started](#get-started)
 * [Available Scripts](#available-scripts)
   * [npm start](#npm-start)
@@ -27,6 +28,11 @@ Below you'll find information about performing common tasks. The most recent ver
   * [iOS Simulator won't open](#ios-simulator-wont-open)
   * [QR Code does not scan](#qr-code-does-not-scan)
 
+## View App
+
+It is possible to view the application on both IOS and Android by using the Expo mobile app. Open the app on your phone with the following link:
+
+exp://exp.host/@frederikn/findhjem 
 
 ## Get Started
 
