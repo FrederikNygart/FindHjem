@@ -7,16 +7,12 @@ import {
   TextInput,
   Picker,
   View,
+  KeyboardAvoidingView,
   Button
 } from 'react-native';
 import {
   goTo,
-  setAge,
-  setGender,
-  filterCentersByAge,
-  filterCentersByGender,
-  getCatagories,
-  getCenters,
+  filterCentersByUser,
 } from '../actions';
 import RadioForm, {
   RadioButton,
@@ -36,36 +32,21 @@ class HomeScreen extends Component {
     this.state = {
       age: '',
       gender: 1,
-      welcomeHeader: 'Velkommen til Find Hjem!',
+      welcomeHeader: 'Velkommen til Find din vej!',
       welcomeSubText: 'Indtast din alder og dit køn for at finde hjælp.'
     }
   }
 
   static navigationOptions = ({ navigation }) => ({
-    title: 'Find Hjem',
+    title: 'Find din vej',
   })
-
-  viewAllCenters() {
-    this.props.getCenters()
-    this.props.goTo('CenterList')
-  }
-
-  goToNextPage() {
-    if (this.state.age === '' || this.state.gender === 0) {
-      alert('Udfyld venligst alder og køn for at finde hjælp')
-    } else {
-      this.props.setAge(this.state.age);
-      this.props.setGender(this.state.gender);
-      this.props.filterCentersByAge(this.state.age);
-      this.props.filterCentersByGender(this.state.gender);
-      this.props.getCatagories();
-      this.props.goTo('ChoiceList');
-    }
-  }
 
   render() {
     return (
-      <View style={appStyle.container}>
+      <KeyboardAvoidingView
+        style={appStyle.container}
+        behavior="padding"
+      >
         <View style={appStyle.containerCentered}>
           <View style={appStyle.containerCentered}>
             <Text>{this.state.welcomeHeader}</Text>
@@ -117,8 +98,18 @@ class HomeScreen extends Component {
             }
           />
         </View>
-      </View>
+      </KeyboardAvoidingView>
+
     );
+  }
+
+  goToNextPage() {
+    if (this.state.age === '' || this.state.gender === 0) {
+      alert('Udfyld venligst alder og køn for at finde hjælp')
+    } else {
+      this.props.filterCentersByUser(this.state.age, this.state.gender);
+      this.props.goTo('ChoiceList');
+    }
   }
 }
 
@@ -131,12 +122,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
       goTo,
-      setAge,
-      setGender,
-      filterCentersByAge,
-      filterCentersByGender,
-      getCatagories,
-      getCenters,
+      filterCentersByUser,
     },
     dispatch
   );
