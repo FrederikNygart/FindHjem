@@ -1,9 +1,12 @@
 import Icon from 'react-native-vector-icons/FontAwesome'
 import React, { Component } from 'react';
+import Communications from 'react-native-communications';
 import { appStyle, style } from '../lib/styles';
 import {
     View,
-    Text
+    Text,
+    TouchableHighlight,
+    Linking,
 } from 'react-native';
 
 
@@ -29,32 +32,56 @@ const InfoElement = ({ icon, infoText }) => {
 const EmailInfo = ({ email }) => {
     if (email !== null) {
         return (
-            <View style={style.centerInfo.element}>
-                <InfoElement
-                    icon='envelope'
-                    infoText={email}
-                />
-            </View>
+            <TouchableHighlight
+                onPress={() => mailTo(email)}
+                activeOpacity={0.99}
+                underlayColor={'steelblue'}
+            >
+                <View style={style.centerInfo.element}>
+                    <InfoElement
+                        icon='envelope'
+                        infoText={email}
+                    />
+                </View>
+            </TouchableHighlight>
+
         );
     } else {
         return null;
     }
 }
 
-const AdressInfo = ({adress}) => {
+const mailTo = (email) => {
+    Communications.email([email], null,null,null,null)
+}
+
+const AdressInfo = ({ adress }) => {
     if (adress !== null) {
-        let {street, postalCode, city} = adress
+        let { street, postalCode, city } = adress
         return (
-            <View style={style.centerInfo.element}>
-                <InfoElement
-                    icon='map-marker'
-                    infoText={'' + street + ', ' + postalCode + ' ' + city}
-                />
-            </View>
+            <TouchableHighlight
+                onPress={() => findOnMaps(street, postalCode)}
+                activeOpacity={0.99}
+                underlayColor={'steelblue'}
+            >
+                <View style={style.centerInfo.element}>
+                    <InfoElement
+                        icon='map-marker'
+                        infoText={'' + street + ', ' + postalCode + ' ' + city}
+                    />
+                </View>
+            </TouchableHighlight>
         )
     } else {
         return null;
     }
+}
+
+const findOnMaps = (street, postalCode) => {
+    let cleanStreet = street.replace(/\s+/g, '');
+    Linking.openURL(
+        'https://www.google.com/maps/search/?api=1&query=' + cleanStreet + '+' + postalCode
+    )
 }
 
 const PhoneInfo = ({ phoneNumbers }) => {
@@ -63,22 +90,33 @@ const PhoneInfo = ({ phoneNumbers }) => {
             {
                 phoneNumbers.map((number, i) => {
                     return (
-                        <View
-                            style={style.centerInfo.element}
+                        <TouchableHighlight
+                            onPress={() => callUp(number)}
+                            activeOpacity={0.99}
+                            underlayColor={'steelblue'}
                             key={i}
                         >
-                            <InfoElement
-                                key={number}
-                                icon='phone'
-                                infoText={number}
-                            />
-                        </View>
+                            <View
+                                style={style.centerInfo.element}
+                                key={i}
+                            >
+                                <InfoElement
+                                    key={number}
+                                    icon='phone'
+                                    infoText={number}
+                                />
+                            </View>
+                        </TouchableHighlight>
                     )
                 })
             }
         </View>
     )
 };
+
+const callUp = (phoneNumber) => {
+    Communications.phonecall(phoneNumber, true)
+}
 
 export const InfoBox = ({ adress, email, phone }) => {
 
