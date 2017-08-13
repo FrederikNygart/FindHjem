@@ -16,37 +16,78 @@ const DAYS = [
 ]
 
 const DayElement = ({ day, opening, closing }) => {
-    return (
-        <View
-            style={style.openingHours.element}
-        >
-            <View style={style.openingHours.row}>
-                <View style={style.openingHours.dayContainer}>
-                    <Text style={style.openingHours.textDay}>{DAYS[day]}</Text>
-                </View>
-                <View style={style.openingHours.hoursContainer}>
-                    <Text style={style.openingHours.textHours}>{opening} - {closing}</Text>
+    let d = new Date();
+    let currentDay = d.getDay();
+    if (day === currentDay) {
+        return (
+            <View
+                style={style.openingHours.element}
+            >
+                <View style={style.openingHours.row}>
+                    <View style={style.openingHours.dayContainer}>
+                        <Text style={style.openingHours.textDayBold}>{DAYS[day]}</Text>
+                    </View>
+                    <View style={style.openingHours.hoursContainer}>
+                        <Text style={style.openingHours.textHoursBold}>{opening} - {closing}</Text>
+                    </View>
                 </View>
             </View>
-        </View>
 
-    )
+        )
+    } else {
+        return (
+            <View
+                style={style.openingHours.element}
+            >
+                <View style={style.openingHours.row}>
+                    <View style={style.openingHours.dayContainer}>
+                        <Text style={style.openingHours.textDay}>{DAYS[day]}</Text>
+                    </View>
+                    <View style={style.openingHours.hoursContainer}>
+                        <Text style={style.openingHours.textHours}>{opening} - {closing}</Text>
+                    </View>
+                </View>
+            </View>
+
+        )
+    }
 }
 
-const ClosedDayElment = ({ day }) => (
-    <View
-        style={style.openingHours.element}
-    >
-        <View style={style.openingHours.row}>
-            <View style={style.openingHours.dayContainer}>
-                <Text style={style.openingHours.textDay}>{DAYS[day]}</Text>
+const ClosedDayElment = ({ day }) => {
+    let d = new Date();
+    let currentDay = d.getDay();
+    if (day === currentDay) {
+        return (
+            <View
+                style={style.openingHours.element}
+            >
+                <View style={style.openingHours.row}>
+                    <View style={style.openingHours.dayContainer}>
+                        <Text style={style.openingHours.textDayBold}>{DAYS[day]}</Text>
+                    </View>
+                    <View style={style.openingHours.hoursContainer}>
+                        <Text style={style.openingHours.textHoursBold}>Lukket</Text>
+                    </View>
+                </View>
             </View>
-            <View style={style.openingHours.hoursContainer}>
-                <Text style={style.openingHours.textHours}>Lukket</Text>
+        )
+    } else {
+        return (
+            <View
+                style={style.openingHours.element}
+            >
+                <View style={style.openingHours.row}>
+                    <View style={style.openingHours.dayContainer}>
+                        <Text style={style.openingHours.textDay}>{DAYS[day]}</Text>
+                    </View>
+                    <View style={style.openingHours.hoursContainer}>
+                        <Text style={style.openingHours.textHours}>Lukket</Text>
+                    </View>
+                </View>
             </View>
-        </View>
-    </View>
-)
+        )
+    }
+}
 
 export const OpeningHours = ({ openingHours }) => {
     if (openingHours === null) {

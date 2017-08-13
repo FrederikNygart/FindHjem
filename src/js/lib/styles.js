@@ -15,18 +15,34 @@ export const style = {
       marginLeft: 10,
       marginRight: 30,
     },
+    elementHightligthed: {
+      marginTop: 5,
+      marginBottom: 5,
+      marginLeft: 10,
+      marginRight: 30,
+      borderColor: 'skyblue',
+    },
     textDay: {
-      textAlign: 'left'
+      textAlign: 'left',
+    },
+    textHours: {
+      marginLeft: 10,
+      textAlign: 'center',
+    },
+    textDayBold: {
+      textAlign: 'left',
+      fontWeight: 'bold',
+    },
+    textHoursBold: {
+      marginLeft: 10,
+      textAlign: 'center',
+      fontWeight: 'bold',
     },
     dayContainer: {
       width: 100,
       marginLeft: 40,
       justifyContent: 'flex-start',
       alignItems: 'flex-start'
-    },
-    textHours: {
-      marginLeft: 10,
-      textAlign: 'center'
     },
     hoursContainer: {
       width: 100,
