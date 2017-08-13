@@ -1,16 +1,29 @@
 import React, { Component } from 'react';
+import { HeaderBackButton } from 'react-navigation';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { appStyle } from '../lib/styles';
 import { InfoBox } from '../components/info_element';
 import { OpeningHours } from '../components/opening_hours'
-import { Text, View, ScrollView } from 'react-native';
+import * as types from '../lib/types';
+import {
+    Text,
+    View,
+    ScrollView
+} from 'react-native';
 import {
     goTo,
     getCatagories,
-    filterCentersByAge,
-    filterCentersByGender,
 } from '../actions';
+
+const BackButton = ({ navigation }) => {
+    let deselectCatagory = navigation.state.params.catagorySelected
+    if (deselectCatagory) {
+        return <HeaderBackButton onPress={() => navigation.dispatch({ type: types.POP_CATAGORY })} />
+    } else {
+        return <HeaderBackButton onPress={() => navigation.dispatch({ type: types.GO_BACK })} />
+    }
+}
 
 class CenterScreen extends Component {
 
@@ -19,13 +32,14 @@ class CenterScreen extends Component {
     }
 
     static navigationOptions = ({ navigation }) => ({
-        title: `${navigation.state.params.centerName}`,
+        title: ``,
+        headerLeft: <BackButton navigation={navigation}/>,
     });
 
     render() {
         return (
             <View style={appStyle.container}>
-                
+                <ScrollView>
                     <InfoBox
                         adress={this.props.center.adress}
                         email={this.props.center.email}
@@ -39,7 +53,7 @@ class CenterScreen extends Component {
                     <OpeningHours
                         openingHours={this.props.center.centerOpening}
                     />
-                
+                </ScrollView>
             </View>
         );
     }
@@ -47,18 +61,15 @@ class CenterScreen extends Component {
     /**
      * ensures an updated choice_list_screen when going back -- a bit hacky and should be 
      * replaced with a more elegant solution such as onBackPressed(). 
-     * Though documentation for react navigation is still scarce
+     * Though documentation for react native navigation is still scarce
      */
     componentWillUnmount() {
-        this.props.filterCentersByAge(this.props.user.age);
-        this.props.filterCentersByGender(this.props.user.gender);
-        this.props.getCatagories();
     }
 }
 
 function mapStateToProps(state) {
     return {
-        center: state.centers.current[0],
+        center: state.catagories.center,
         user: state.user,
     }
 }
@@ -66,9 +77,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         goTo,
-        getCatagories,
-        filterCentersByAge,
-        filterCentersByGender,
+        getCatagories
     }, dispatch);
 }
 

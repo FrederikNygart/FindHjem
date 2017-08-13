@@ -1,6 +1,6 @@
 import Icon from 'react-native-vector-icons/FontAwesome'
 import React, { Component } from 'react';
-import { appStyle } from '../lib/styles';
+import { appStyle, style } from '../lib/styles';
 import {
     View,
     Text
@@ -9,11 +9,19 @@ import {
 
 const InfoElement = ({ icon, infoText }) => {
     return (
-        <View style={appStyle.row}>
-            <Icon name={icon} ></Icon>
-            <Text style={appStyle.resultText}>
-                {infoText}
-            </Text>
+        <View style={style.centerInfo.row}>
+            <View
+                style={style.centerInfo.iconContainer}
+            >
+                <Icon name={icon} ></Icon>
+            </View>
+            <View
+                style={style.centerInfo.textContainer}
+            >
+                <Text style={style.centerInfo.text}>
+                    {infoText}
+                </Text>
+            </View>
         </View>
     )
 };
@@ -21,7 +29,7 @@ const InfoElement = ({ icon, infoText }) => {
 const EmailInfo = ({ email }) => {
     if (email !== null) {
         return (
-            <View style={appStyle.containerBox}>
+            <View style={style.centerInfo.element}>
                 <InfoElement
                     icon='envelope'
                     infoText={email}
@@ -33,14 +41,21 @@ const EmailInfo = ({ email }) => {
     }
 }
 
-const AdressInfo = ({ city, postalCode, street }) => (
-    <View style={appStyle.containerBox}>
-        <InfoElement
-            icon='map-marker'
-            infoText={'' + street + ', ' + postalCode + ' ' + city}
-        />
-    </View>
-)
+const AdressInfo = ({adress}) => {
+    if (adress !== null) {
+        let {street, postalCode, city} = adress
+        return (
+            <View style={style.centerInfo.element}>
+                <InfoElement
+                    icon='map-marker'
+                    infoText={'' + street + ', ' + postalCode + ' ' + city}
+                />
+            </View>
+        )
+    } else {
+        return null;
+    }
+}
 
 const PhoneInfo = ({ phoneNumbers }) => {
     return (
@@ -48,8 +63,8 @@ const PhoneInfo = ({ phoneNumbers }) => {
             {
                 phoneNumbers.map((number, i) => {
                     return (
-                        <View 
-                            style={appStyle.containerBox}
+                        <View
+                            style={style.centerInfo.element}
                             key={i}
                         >
                             <InfoElement
@@ -68,9 +83,9 @@ const PhoneInfo = ({ phoneNumbers }) => {
 export const InfoBox = ({ adress, email, phone }) => {
 
     return (
-        <View>
+        <View style={style.centerInfo.container}>
             <AdressInfo
-                {...adress}
+                adress={adress}
             />
             <EmailInfo
                 email={email}

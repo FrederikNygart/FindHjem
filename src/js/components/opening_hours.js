@@ -1,4 +1,4 @@
-import { appStyle } from '../lib/styles';
+import { appStyle, style } from '../lib/styles';
 import React, { Component } from 'react';
 import {
     View,
@@ -18,16 +18,35 @@ const DAYS = [
 const DayElement = ({ day, opening, closing }) => {
     return (
         <View
-            style={appStyle.openingHoursElement}
+            style={style.openingHours.element}
         >
-            <View style={appStyle.row}>
-                <Text>{DAYS[day]}</Text>
-                <Text syle={appStyle.resultText}>{opening} - {closing}</Text>
+            <View style={style.openingHours.row}>
+                <View style={style.openingHours.dayContainer}>
+                    <Text style={style.openingHours.textDay}>{DAYS[day]}</Text>
+                </View>
+                <View style={style.openingHours.hoursContainer}>
+                    <Text style={style.openingHours.textHours}>{opening} - {closing}</Text>
+                </View>
             </View>
         </View>
 
     )
 }
+
+const ClosedDayElment = ({ day }) => (
+    <View
+        style={style.openingHours.element}
+    >
+        <View style={style.openingHours.row}>
+            <View style={style.openingHours.dayContainer}>
+                <Text style={style.openingHours.textDay}>{DAYS[day]}</Text>
+            </View>
+            <View style={style.openingHours.hoursContainer}>
+                <Text style={style.openingHours.textHours}>Lukket</Text>
+            </View>
+        </View>
+    </View>
+)
 
 export const OpeningHours = ({ openingHours }) => {
     if (openingHours === null) {
@@ -35,7 +54,7 @@ export const OpeningHours = ({ openingHours }) => {
     } else {
         return (
             <View style={appStyle.container}>
-                <View style={appStyle.openingHours}>
+                <View style={style.openingHours.container}>
                     {
                         openingHours.map((val, i) => {
                             if (val !== null) {
@@ -48,7 +67,12 @@ export const OpeningHours = ({ openingHours }) => {
                                     />
                                 )
                             } else {
-                                return null
+                                return (
+                                    <ClosedDayElment
+                                        key={i}
+                                        day={i}
+                                    />
+                                )
                             }
 
                         })
