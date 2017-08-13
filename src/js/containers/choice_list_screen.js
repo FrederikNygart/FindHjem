@@ -1,21 +1,32 @@
 import React, { Component } from 'react';
+import { HeaderBackButton } from 'react-navigation';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { appStyle } from '../lib/styles';
 import ChoiceListElement from '../components/choice_list_element';
+import * as types from '../lib/types';
 import {
   Text,
   View,
   ScrollView,
   TouchableOpacity,
-  TouchableHighlight
+  TouchableHighlight,
+  Button,
 } from 'react-native';
 import {
   goTo,
   getCatagories,
   filterCentersByCatagory,
+  selectCenter,
+  resetCatagories,
 } from '../actions';
 
+const getCatagoryDescriptions = (catagories) => {
+  return Object.entries(catagories).reduce((acc, [key, catagory]) => {
+    acc[key] = catagory.description
+    return acc
+  }, {})
+}
 
 class ChoiceListScreen extends Component {
 
@@ -27,21 +38,25 @@ class ChoiceListScreen extends Component {
     if (this.props.centers !== nextProps.centers) {
       if (nextProps.catagoriesLevel > 1 && nextProps.centers.length > 1) {
         //go to center_list_screen
-        alert('Go to center list screen');
+        this.props.goTo('CenterList');
       }
       if (nextProps.centers.length === 1) {
         //Go to center screen for the remaining center
-        this.props.goTo('Center', { centerName: nextProps.centers[0].name });
-      }
-      if (nextProps.catagoriesLevel < 2 && nextProps.centers.length > 1) {
-        this.props.getCatagories();
+        this.props.selectCenter(nextProps.centers[0])
+        this.props.goTo(
+          'Center',
+          {
+            catagorySelected: true
+          }
+        );
       }
     }
   }
 
-  static navigationOptions = {
-    title: 'Hvad søger du?'
-  };
+  static navigationOptions = ({navigation}) => ({
+    title: 'Hvad søger du?',
+    headerRight: <Button title='nulstil' onPress={() => navigation.dispatch({ type: types.RESET_CATAGORIES})}/>
+  });
 
   render() {
 
@@ -59,7 +74,7 @@ class ChoiceListScreen extends Component {
           return (
             <TouchableHighlight
               key={i}
-              onPress={() => this.onPressCatagory(key)}
+              onPress={() => this.props.filterCentersByCatagory(key)}
               activeOpacity={0.99}
               underlayColor={'steelblue'}
             >
@@ -75,18 +90,15 @@ class ChoiceListScreen extends Component {
       </ScrollView>
     )
   }
-
-  onPressCatagory(catagory) {
-    this.props.filterCentersByCatagory(catagory);
-  }
 }
 
 function mapStateToProps(state) {
   return {
-    catagories: state.centers.catagories,
-    catagoriesLevel: state.centers.catagoriesLevel,
-    centers: state.centers.current,
-    user: state.user,
+    //catagories: {catagoryKey: catagoryDescription}
+    catagories: state.catagories.current,
+    catagoriesLevel: state.catagories.selectedCatagories.length,
+    //centers: Array<Center>
+    centers: state.catagories.centers,
   }
 }
 
@@ -96,6 +108,8 @@ function mapDispatchToProps(dispatch) {
       goTo,
       getCatagories,
       filterCentersByCatagory,
+      selectCenter,
+      resetCatagories,
     },
     dispatch
   );
