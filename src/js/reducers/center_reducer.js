@@ -1,116 +1,48 @@
 import { CENTERS } from '../data/mocks/centers';
-import { CATAGORIES } from '../data/mocks/center_classification'
+import { CATAGORIES } from '../data/mocks/center_classification';
 import * as types from '../lib/types';
+import { 
+    getCatagories, 
+    filterCentersByUser, 
+    filterCentersByUserAndCatagory,
+} from './reducer_functions/center_reducer_functions';
 
-/**
- * Returns an array of centers
- * @param {Object} centers - Object with center objects within
- * @returns {Array}
- */
-const getCenters = (centers) => {
-    return Object.entries(centers).map(([key, val]) => {
-        return val
-    })
-}
-
-/**
- * Returns a list of centers filtered by age
- * @param {Number} age - age of user
- * @param {Object} centers - Object with Center objects within
- * @returns {Array}
- */
-const filterCentersByAge = (age, centers) => {
-    return getCenters(centers).reduce((acc, center) => {
-        let lowerAge = center.ageLimit.lowerAge;
-        let upperAge = center.ageLimit.upperAge;
-        if (age >= lowerAge && age <= upperAge) {
-            acc.push(center)
-        }
-        return acc;
-    }, [])
-}
-
-/**
- * Returns a list of centers filtered by gender
- * @param {Number} gender - Gender of user where 1 = MALE and 2 = FEMALE
- * @param {Array} centers - Array of Center objects within
- * @returns {Array}
- */
-const filterCentersByGender = (gender, centers) => {
-    return centers.reduce((acc, center) => {
-        //check if centers accepts the specific gender OR all genders
-        if (center.gender === gender || center.gender === 0) {
-            acc.push(center);
-        }
-        return acc;
-    }, [])
-}
-
-/**
- * Returns a list of centers filtered by catagory
- * @param {String} selectedCatagory - the key of the selected catagory
- * @param {Object} centers - list of current centers to be filtered
- * @param {Number} catagoriesLevel - level of catagory in the catagory hierachy
- * @returns {Array} of centers
- */
-const filterCentersByCatagory = (selectedCatagory, centers, catagoriesLevel) => {
-    return centers.reduce((acc, center) => {
-        //check if the center's catagory matches the selectedCatagory
-        let centerCatagory = Object.keys(center.catagories)[catagoriesLevel];
-        if (centerCatagory === selectedCatagory) {
-            acc.push(center);
-        }
-        return acc;
-    }, [])
-}
-
-/**
- * Returns an Object with unique catagory objects from the 'centers' Array
- * @param {Array} centers - Array of centers
- * @returns {Object} a unique list of catagories taken from the centers array
- */
-const getCatagories = (centers, catagoriesLevel) => {
-    return centers.reduce((acc, center) => {
-        let [key, val] = Object.entries(center.catagories)[catagoriesLevel]
-        if (key in acc) {
-            //do nothing
-        } else {
-            acc[key] = val;
-        }
-        return acc;
-    }, {})
-}
-
-export default function centerReducer(state = [], action) {
+export default function centerReducer(state = {selectedCatagories: []}, action) {
     switch (action.type) {
-        case types.GET_CENTERS:
+        case 'ssss':
             return {
                 ...state,
                 current: getCenters(CENTERS),
             }
 
-        case types.FILTER_CENTERS_BY_AGE:
+        case 'ss':
             return {
                 ...state,
-                current: filterCentersByAge(action.age, CENTERS),
+                current: filterCentersByUser(CENTERS, action.age, action.gender),
+                userAge: action.age,
+                userGender: action.gender,
                 catagoriesLevel: 0,
             }
-
-        case types.FILTER_CENTERS_BY_GENDER:
-            return {
-                ...state,
-                current: filterCentersByGender(action.gender, state.current),
-            }
-        case types.GET_CATAGORIES:
+        case 'sss':
             return {
                 ...state,
                 catagories: getCatagories(state.current, state.catagoriesLevel),
             }
-        case types.FILTER_CENTERS_BY_CATAGORY:
+        case 'ssssss':
             return {
                 ...state,
-                current: filterCentersByCatagory(action.selectedCatagory, state.current, state.catagoriesLevel),
-                catagoriesLevel: state.catagoriesLevel + 1
+                current: filterCentersByUserAndCatagory(CENTERS, state.userAge, state.userGender, action.selectedCatagory, state.catagoriesLevel),
+                catagoriesLevel: state.catagoriesLevel + 1,
+                selectedCatagories: addCatagory(state.selectedCatagories, action.selectedCatagory),
+            }
+        case 'ssssssssss':
+            let pastLevel = state.catagoriesLevel-2
+            console.log('past level', pastLevel);
+            let centers = filterCentersByUserAndCatagory(CENTERS, state.userAge, state.userGender, state.selectedCatagories[pastLevel], pastLevel)
+            return {
+                current: centers,
+                catagoriesLevel: pastLevel,
+                selectedCatagories: removeCatagory(state.selectedCatagories)
             }
         default:
             return state;

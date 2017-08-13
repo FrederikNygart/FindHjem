@@ -22,14 +22,18 @@ export default function navigationReducer(
         state
       );
       break;
-
-    case types.SET_PARAMS:
+    case types.GO_BACK:
       nextState = AppNavigator.router.getStateForAction(
-        NavigationActions
-          .setParams({ routeName: action.route, params: action.params }),
+        NavigationActions.back(),
         state
       )
-
+      break;
+    case types.POP_CATAGORY:
+      nextState = AppNavigator.router.getStateForAction(
+        NavigationActions.back(),
+        state
+      )
+      break;
     default:
       nextState = AppNavigator.router.getStateForAction(action, state);
       break;
