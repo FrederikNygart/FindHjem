@@ -1,9 +1,10 @@
 import {
     getCenters,
-    filterCentersByAge,
-    filterCentersByGender,
+    filterCentersByUser,
     getCatagories,
+    selectCenter,
     filterCentersByCatagory,
+    resetCatagories,
 } from './center_actions';
 
 import {
@@ -19,13 +20,14 @@ import {
 
 export {
     getCenters,
-    filterCentersByAge,
-    filterCentersByGender,
+    selectCenter,
+    filterCentersByUser,
     goTo,
     setParams,
     setAge,
     setGender,
     getCatagories,
     filterCentersByCatagory,
+    resetCatagories,
 };
 

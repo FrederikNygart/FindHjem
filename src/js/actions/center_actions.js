@@ -6,17 +6,18 @@ export const getCenters = () => {
     }
 }
 
-export const filterCentersByAge = (age) => {
+export const selectCenter = (center) => {
     return {
-        type: types.FILTER_CENTERS_BY_AGE,
-        age: age,
+        type: types.SELECT_CENTER,
+        center: center,
     }
 }
 
-export const filterCentersByGender = (gender) => {
+export const filterCentersByUser = (age, gender) => {
     return {
-        type: types.FILTER_CENTERS_BY_GENDER,
-        gender: gender,
+        type: types.FILTER_CENTERS_BY_USER,
+        userAge: age,
+        userGender: gender,
     }
 }
 
@@ -37,5 +38,17 @@ export const getSubCatagories = (selectedCatagory) => {
     return {
         type: types.GET_SUB_CATAGORIES,
         selectedCatagory: selectedCatagory,
+    }
+}
+
+export const resetCatagories = () =>{
+    return {
+        type: types.RESET_CATAGORIES
+    }
+}
+
+export const popCatagory = () =>{
+    return {
+        type: types.POP_CATAGORY
     }
 }
