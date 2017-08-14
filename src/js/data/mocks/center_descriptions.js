@@ -147,5 +147,91 @@ Aktiviteter (ulønnet):
 - Kreativ værksted:
 papir, maling, stof, læder, filt mm.
     `,
+    kofoed_skole: `
+Her kan du:
+- Få gratis undervisning, værkstedsarbejde, rådgivning og fællesspisning.
+- Information for Grønlændere der er nye i Aalborg.
+- Råd og vejledning hos skolens rådgiver.
+- Samtaler med frivillig psykolog/terapeut
+    `,
+    kirkens_korshær_herberg: `
+Dette er et midlertidigt ophold.
+
+Hvis du står uden bolig, har du mulighed for at henvende dig her, hvor du kan bo i en kortere periode.
+ 
+Her hjælper personalet dig med de ting, som du har behov for, for at komme videre.
+ 
+Du får hjælp til at finde en billig lejlighed, som du har råd til.
+ 
+Du får tilknyttet en kontaktperson, der hjælper og rådgiver dig gennem opholdet.
+ 
+Herberget har en madklub, som du kan deltage i, hvor der bliver lavet mad sammen med andre for billige penge.
+ 
+Derudover er der adgang til beboerkøkken, hvor du selv kan lave mad.
+ 
+Du deltager i de daglige praktiske opgaver.
+ 
+Der tilbydes dagligt kørsel til Kirkens Korshærs Gårdprojekt.
+    `,
+    svenstrupgaard: `
+Mangler du et sted at bo, har du her mulighed for et midlertidigt ophold.
+ 
+Her tilbydes du støtte til bedre at klare tilværelsen.
+ 
+Der er adgang til f.eks. billard, motionsrum, sportshal, netcafé mv.
+ 
+Du vil få tildelt en kontaktperson.
+    `,
+    krisecenter_for_kvinder: `
+Har du været udsat for b.la. vold eller trusler har du her mulighed for at søge midlertidigt ophold og støtte her.
+ 
+Du må gerne have børn med dig.
+ 
+Der tilbydes rådgivning af personalet.
+    `,
+    midtbysjakket: `
+Her forsøges der at finde frem til den støtte/hjælp, der måtte være aktuel for dig.
+
+MidtbySjakket er at finde rundt i byen, men ellers kan du ring for en aftale
+    `,
+    stedet: `
+Her har du mulighed for at få rådgivning og almindelig vejledning og støtte til job og uddannelse.
+    `,
+    skuret: `
+Her ydes anonym rådgivning og almindelig vejledning samt støtte til job og uddannelse.
+    `,
+    baglandet: `
+Dette er et mødested for tidligere anbragte personer.
+ 
+Stedet støtter dig med at danne netværk med de andre og hjælper dig med at komme videre i dit liv.
+ 
+Andet:
+Fællesspisning, hygge og aktiviteter.  
+
+Åbent sidste lørdag i måneden Derudover individuelle møder i og ude af huset
+    `,
+    headspace: `
+Hvis du har brug for nogle at snakke med om dine problemer, har du mulighed for at få rådgivning i stort som småt - lige fra ensomhed til konflikter med familien. 
+
+Chat: 
+Alle hverdage fra 12-22    
+    `,
+    vagtlaegen:`
+Husk altid at ringe, inden du tager ind til lægevagten.
+Når du ringer til lægevagten, kommer du direkte igennem til lægen, som vil bede om dit personnummer. Herefter vil lægen bede dig fortælle om dine symptomer.
+På denne måde afgør lægen om den telefoniske kontakt er tilstrækkelig eller om du bør undersøges i en af lægevagtens konsultationer.
+    `,
+    jobcenter:`
+Her skal du melde dig ledig, for at kunne ansøge om kontakthjælp.
+    `,
+    ydelses_og_socialcentret:`
+Når du har meldt dig ledig skal du til ydelses-og socialcenteret og søge om kontanthjælp. Her skal du have en oversigt med af dine kontoer samt et arrangement oversigt over de seneste 3 måneder. Husk ID.
+    `,
+    uddannelseshuset: `
+Er du under 30 år, har du mulighed for at søge uddannelseshjælp.
+Hvis du møder op i uddannelseshuset har du mulighed for at melde dig ledig her og søge uddannelseshjælp.
+Der vil som regel går 2-3 uger før du får den første udbetaling.
+    `,
+
 
 }
