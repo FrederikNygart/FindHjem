@@ -81,12 +81,9 @@ const getCenterKeysFromCatagories = (catagories, selectedCatagories) => {
         case 1:
             let catagory = selectedCatagories[0]
             centers = catagories[catagory].centers.reduce((acc, val) => {
-                console.log('val', val)
                 acc.push(val)
-                console.log('acc', acc)
                 return acc;
             }, [])
-            console.log('centers', centers)
             break;
         case 2:
             let
