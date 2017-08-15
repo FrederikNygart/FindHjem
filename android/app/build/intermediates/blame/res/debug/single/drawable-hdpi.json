@@ -132,12 +132,12 @@
         "source": "C:\\Users\\Bruger\\.android\\build-cache\\d5f02892eeb9487813c74d21c2253382f9f29b67\\output\\res\\drawable-hdpi\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
-        "merged": "D:\\Projects\\FindHjem\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_ab_back_mtrl_am_alpha.png",
-        "source": "C:\\Users\\Bruger\\.android\\build-cache\\d5f02892eeb9487813c74d21c2253382f9f29b67\\output\\res\\drawable-hdpi\\abc_ic_ab_back_mtrl_am_alpha.png"
-    },
-    {
         "merged": "D:\\Projects\\FindHjem\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_voice_search_api_mtrl_alpha.png",
         "source": "C:\\Users\\Bruger\\.android\\build-cache\\d5f02892eeb9487813c74d21c2253382f9f29b67\\output\\res\\drawable-hdpi\\abc_ic_voice_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\Projects\\FindHjem\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_ab_back_mtrl_am_alpha.png",
+        "source": "C:\\Users\\Bruger\\.android\\build-cache\\d5f02892eeb9487813c74d21c2253382f9f29b67\\output\\res\\drawable-hdpi\\abc_ic_ab_back_mtrl_am_alpha.png"
     },
     {
         "merged": "D:\\Projects\\FindHjem\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_ic_menu_moreoverflow_mtrl_alpha.png",

@@ -1,4 +1,4 @@
-#Tue Aug 15 15:24:59 CEST 2017
+#Tue Aug 15 15:39:47 CEST 2017
 file.2=D\:\\Projects\\FindHjem\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_f731ae5fd6d407ca9f6028c5380968fa7dcc3ec3\\classes.dex
 base.2=D\:\\Projects\\FindHjem\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_f731ae5fd6d407ca9f6028c5380968fa7dcc3ec3
 file.1=D\:\\Projects\\FindHjem\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\okhttp-3.4.1_1935e69736cbcce9f0a2c7640baa9bb7237225b5\\classes.dex
