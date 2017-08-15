@@ -43,10 +43,6 @@ class HomeScreen extends Component {
 
   render() {
     return (
-      <KeyboardAvoidingView
-        style={appStyle.container}
-        behavior="padding"
-      >
         <View style={appStyle.containerCentered}>
           <View style={appStyle.containerCentered}>
             <Text>{this.state.welcomeHeader}</Text>
@@ -98,7 +94,6 @@ class HomeScreen extends Component {
             }
           />
         </View>
-      </KeyboardAvoidingView>
 
     );
   }
