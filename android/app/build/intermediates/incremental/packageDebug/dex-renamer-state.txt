@@ -1,4 +1,4 @@
-#Tue Aug 15 15:39:48 CEST 2017
+#Tue Aug 15 15:44:53 CEST 2017
 base.0=D\:\\Projects\\FindHjem\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_d613e7fc354664bcdc386b471d2ef2a65f178a5d
 renamed.1=classes.dex
 renamed.0=classes2.dex
