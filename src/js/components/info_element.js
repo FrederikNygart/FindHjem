@@ -1,4 +1,3 @@
-import Icon from 'react-native-vector-icons/FontAwesome'
 import React, { Component } from 'react';
 import Communications from 'react-native-communications';
 import { appStyle, style } from '../lib/styles';
@@ -7,6 +6,7 @@ import {
     Text,
     TouchableHighlight,
     Linking,
+    Image
 } from 'react-native';
 
 
@@ -16,7 +16,10 @@ const InfoElement = ({ icon, infoText }) => {
             <View
                 style={style.centerInfo.iconContainer}
             >
-                <Icon name={icon} ></Icon>
+                <Image
+                    source={icon}
+                    style={style.centerInfo.icon}
+                />
             </View>
             <View
                 style={style.centerInfo.textContainer}
@@ -39,7 +42,7 @@ const EmailInfo = ({ email }) => {
             >
                 <View style={style.centerInfo.element}>
                     <InfoElement
-                        icon='envelope'
+                        icon={require('../../img/email.png')}
                         infoText={email}
                     />
                 </View>
@@ -52,7 +55,7 @@ const EmailInfo = ({ email }) => {
 }
 
 const mailTo = (email) => {
-    Communications.email([email], null,null,null,null)
+    Communications.email([email], null, null, null, null)
 }
 
 const AdressInfo = ({ adress }) => {
@@ -66,7 +69,7 @@ const AdressInfo = ({ adress }) => {
             >
                 <View style={style.centerInfo.element}>
                     <InfoElement
-                        icon='map-marker'
+                        icon={require('../../img/location.png')}
                         infoText={'' + street + ', ' + postalCode + ' ' + city}
                     />
                 </View>
@@ -102,7 +105,7 @@ const PhoneInfo = ({ phoneNumbers }) => {
                             >
                                 <InfoElement
                                     key={number}
-                                    icon='phone'
+                                    icon={require('../../img/phone.png')}
                                     infoText={number}
                                 />
                             </View>

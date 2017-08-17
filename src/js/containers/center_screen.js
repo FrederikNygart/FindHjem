@@ -32,7 +32,7 @@ class CenterScreen extends Component {
     }
 
     static navigationOptions = ({ navigation }) => ({
-        title: ``,
+        title: `${navigation.state.params.centerName}`,
         headerLeft: <BackButton navigation={navigation}/>,
     });
 

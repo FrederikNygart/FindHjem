@@ -42,10 +42,12 @@ class ChoiceListScreen extends Component {
       }
       if (nextProps.centers.length === 1) {
         //Go to center screen for the remaining center
-        this.props.selectCenter(nextProps.centers[0])
+        let center = nextProps.centers[0]
+        this.props.selectCenter(center)
         this.props.goTo(
           'Center',
           {
+            centerName: center,
             catagorySelected: true
           }
         );

@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { tokens } from './tokens'
 
 export const style = {
   openingHours: StyleSheet.create({
@@ -82,6 +83,10 @@ export const style = {
       justifyContent: 'center',
       alignItems: 'center'
     },
+    icon: {
+      width: tokens.iconSize,
+      height: tokens.iconSize
+    }
   }),
 }
 
