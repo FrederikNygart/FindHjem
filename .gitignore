@@ -1,6 +1,18 @@
+# Node project
 node_modules/
 .expo/
 npm-debug.*
-android/app/build/
-android/build/
-android/.gradle/
+
+# Android Studio
+*.iml
+.idea
+#.idea/workspace.xml
+.gradle
+build/
+
+# built application files
+*.apk
+*.ap_
+
+# OSX files
+.DS_Store
